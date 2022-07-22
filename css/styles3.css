@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto-Mono");
+* {
+  transition: all 0.5s;
+  box-sizing: border-box;
+}
+.main-container {
+  background: #ff7373;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  perspective: 300px;
+}
+.main-container .container {
+  background: transparent;
+  border-radius: 4px;
+  width: 272px;
+  height: 100px;
+  transform: rotateY(0deg);
+  transform-style: preserve-3d;
+}
+.main-container .container .front {
+  background: #fff;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+.main-container .container .back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+.main-container .container .front,
+.main-container .container .back {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backface-visibility: hidden;
+  width: 272px;
+  height: 100px;
+  border-radius: 4px;
+}
+.main-container .container .front .decrement,
+.main-container .container .back .decrement,
+.main-container .container .front .increment,
+.main-container .container .back .increment {
+  width: 64px;
+  height: 100px;
+  opacity: 0.2;
+}
+.main-container .container .front .decrement:hover,
+.main-container .container .back .decrement:hover,
+.main-container .container .front .increment:hover,
+.main-container .container .back .increment:hover {
+  cursor: pointer;
+}
+.main-container .container .front .decrement,
+.main-container .container .back .decrement {
+  background: url("http://frolovoleg.ru/images/decrement.svg") no-repeat center;
+}
+.main-container .container .front .increment,
+.main-container .container .back .increment {
+  background: url("http://frolovoleg.ru/images/increment.svg") no-repeat center;
+}
+.main-container .container .front .value_front,
+.main-container .container .back .value_front,
+.main-container .container .front .value_back,
+.main-container .container .back .value_back {
+  user-select: none;
+  font-size: 32px;
+  line-height: 100px;
+  font-family: "Roboto Mono", "Courier", monospace;
+}
